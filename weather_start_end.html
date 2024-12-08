@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маршрут и Погода</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .route {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .weather {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Маршрут</h1>
+    <div class="route">
+        <h2>Начальная точка (ширина и долгота): {{weather.start.coords}}</h2>
+        <h2>Конечная точка: (ширина и долгота): {{weather.end.coords}}</h2>
+    </div>
+
+    <div class="weather">
+        <h2>Начальная точка</h2>
+        <ul>
+            <li>Температура: {{weather.start.temp}}</li>
+            <li>Влажность: {{weather.start.humidity}}%</li>
+            <li>Ветер: {{weather.start.wind_speed}} км/ч</li>
+            <li>Погодные условия: {{weather.start.weather}}</li>
+        </ul>
+    </div>
+
+    <div class="weather">
+        <h2>Конечная точка</h2>
+        <ul>
+            <li>Температура: {{weather.end.temp}}</li>
+            <li>Влажность: {{weather.end.humidity}}%</li>
+            <li>Ветер: {{weather.end.wind_speed}} км/ч</li>
+            <li>Погодные условия: {{weather.end.weather}}</li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-button">Назад</a>
+
+</body>
+</html>
